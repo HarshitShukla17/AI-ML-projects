@@ -31,11 +31,13 @@ if uploaded_file is not None:
     image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
 
     # Make predictions
+    
     predictions = model.predict(image_array)
     predicted_class = np.argmax(predictions[0])  # Get the index of the highest score
     confidence = np.max(predictions[0])  # Get the highest score as confidence
 
     # Display results
+    
     st.write(f"Predicted Class: {class_names[predicted_class]}")
     st.write(f"Confidence: {confidence:.2f}")
 
